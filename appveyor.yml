@@ -9,7 +9,7 @@ test: OFF
 install:
   - set WXWIN=C:\wxWidgets-3.0.2
   - '"C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\SetEnv.cmd" /x64'
-  - ps: Start-FileDownload http://download.sourceforge.net/project/wxwindows/files/3.0.2/wxWidgets-3.0.2.zip
+  - ps: Start-FileDownload http://download.sourceforge.net/project/wxwindows/3.0.2/wxWidgets-3.0.2.zip
   # - ps: Start-FileDownload http://downloads.sourceforge.net/project/wxwindows/2.8.12/wxWidgets-2.8.12.zip
   - cmd: 7z x wxwidgets-3.0.2.zip -oc:\
   - cmd: SET PATH=%PATH%;%WXWIN%;%WXWIN%\lib\vc_dll;C:\Program Files\Poedit\bin;
