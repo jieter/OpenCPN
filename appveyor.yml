@@ -21,6 +21,7 @@ install:
 before_build:
   - set wxWidgets_ROOT_DIR=%WXWIN%
   - set wxWidgets_LIB_DIR=%WXWIN%\lib\vc_dll
+  - call "C:\Program Files\Microsoft Visual Studio 12.0\VC\vcvarsall.bat"
   - set
   - cmd: cd c:\project\opencpn
   - cmd: ls %wxWidgets_LIB_DIR%
@@ -32,7 +33,6 @@ before_build:
 build_script:
   - cmake --build . --config Release --target package
 
-# - call "C:\Program Files\Microsoft Visual Studio 12.0\VC\vcvarsall.bat"
 # inspiration from:
 # - https://github.com/alex85k/osm2pgsql-cmake/blob/984582bfae2f1344e75db48c04daf70bcaca518c/appveyor.yml
 # - https://github.com/antonvw/wxExtension/blob/master/appveyor.yml
