@@ -23,6 +23,7 @@ before_build:
   - set wxWidgets_LIB_DIR=%WXWIN%\lib\vc_dll
   - call "C:\Program Files\Microsoft Visual Studio 12.0\VC\vcvarsall.bat"
   - set
+  - cmake
   - cmd: cd c:\project\opencpn
   - cmd: ls %wxWidgets_LIB_DIR%
   - mkdir build
