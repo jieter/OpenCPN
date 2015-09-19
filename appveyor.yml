@@ -7,19 +7,19 @@ deploy: OFF
 test: OFF
 
 install:
-  - set WXWIN=C:\wxWidgets-2.8.12
+  - set WXWIN=C:\wxWidgets-3.0.2
   - '"C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\SetEnv.cmd" /x64'
-  - ps: Start-FileDownload http://downloads.sourceforge.net/project/wxwindows/2.8.12/wxWidgets-2.8.12.zip
-  - cmd: 7z x wxwidgets-2.8.12.zip -oc:\
-  - cmd: SET PATH=%PATH%;C:\wxWidgets-2.8.12;%WXWIN%\lib\vc_lib;C:\Program Files\Poedit\bin;
+  - ps: Start-FileDownload http://download.sourceforge.net/project/wxwindows/files/3.0.2/wxWidgets-3.0.2.zip
+  # - ps: Start-FileDownload http://downloads.sourceforge.net/project/wxwindows/2.8.12/wxWidgets-2.8.12.zip
+  - cmd: 7z x wxwidgets-3.0.2.zip -oc:\
+  - cmd: SET PATH=%PATH%;%WXWIN%;%WXWIN%\lib\vc_dll;C:\Program Files\Poedit\bin;
   - set wxWidgets_ROOT_DIR=%WXWIN%
   - set wxWidgets_LIB_DIR=%WXWIN%\lib\vc_dll
-  - cmd: cd C:\wxWidgets-2.8.12\build\msw\
+  - cmd: cd %WXWIN%\build\msw\
   - cmd: nmake -f makefile.vc BUILD=release SHARED=1
   - cmd: nmake -f makefile.vc BUILD=debug SHARED=1
   - cmd: cinst poedit -x86
   - cmake --help
-  - ls C:\wxWidgets-2.8.12
   - set
 
 before_build:
