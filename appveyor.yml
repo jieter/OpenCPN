@@ -1,20 +1,29 @@
-clone_folder: c:\opencpn
+clone_folder: c:\project\opencpn
+shallow_clone: true
 
 platform: x64
 configuration: Release
 deploy: OFF
 test: OFF
 
+install:
+  - ps: Start-FileDownload 'http://sourceforge.net/projects/syncped/files/wxWidgets-3.1.0-include.7z'
+  - ps: Start-FileDownload 'http://sourceforge.net/projects/syncped/files/wxWidgets-3.1.0-lib.7z'
+  - ps: Start-FileDownload 'http://sourceforge.net/projects/syncped/files/wxWidgets-3.1.0-locale.7z'
+  - cmd: 7z x wxWidgets-3.1.0-include.7z -oC:\wxWidgets
+  - cmd: 7z x wxWidgets-3.1.0-lib.7z -oC:\wxWidgets
+  - cmd: 7z x wxWidgets-3.1.0-locale.7z -oC:\wxWidgets
+  - cmd: SET PATH=%PATH%;C:\wxWidgets;
+
 before_build:
-  - C:\Program Files\Microsoft Visual Studio 10.0\VC\vcvarsall.bat x86
-  - C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\vcvarsall.bat x86
-  - echo Running cmake...
-  - mkdir c:\projects\opencpn\build
-  - cd c:\projects\opencpn\build
-  - cmake -G "Visual Studio 10" ..
+  - mkdir build
+  - ps: cd build
+  - cmake -G "Visual Studio 12" -DCMAKE_PREFIX_PATH=C:\wxWidgets -DwxWidgets_ROOT_DIR=c:/wxwidgets -DwxWidgets_LIB_DIR=c:/wxwidgets/lib/vc_dll ..
+  #- cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=C:\wxWidgets -DCMAKE_PROGRAM_PATH=C:\cygwin\bin ..
 
 build_script:
   - cmake --build . --config Release --target package
 
 # inspiration from:
-# https://github.com/alex85k/osm2pgsql-cmake/blob/984582bfae2f1344e75db48c04daf70bcaca518c/appveyor.yml
+# - https://github.com/alex85k/osm2pgsql-cmake/blob/984582bfae2f1344e75db48c04daf70bcaca518c/appveyor.yml
+# - https://github.com/antonvw/wxExtension/blob/master/appveyor.yml
