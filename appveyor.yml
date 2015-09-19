@@ -1,0 +1,20 @@
+clone_folder: c:\opencpn
+
+platform: x64
+configuration: Release
+deploy: OFF
+test: OFF
+
+before_build:
+  - C:\Program Files\Microsoft Visual Studio 10.0\VC\vcvarsall.bat x86
+  - C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\vcvarsall.bat x86
+  - echo Running cmake...
+  - mkdir c:\projects\opencpn\build
+  - cd c:\projects\opencpn\build
+  - cmake -G "Visual Studio 10" ..
+
+build_script:
+  - cmake --build . --config Release --target package
+
+# inspiration from:
+# https://github.com/alex85k/osm2pgsql-cmake/blob/984582bfae2f1344e75db48c04daf70bcaca518c/appveyor.yml
