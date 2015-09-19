@@ -27,7 +27,7 @@ before_build:
   - cmd: ls %wxWidgets_LIB_DIR%
   - mkdir build
   - ps: cd build
-  - cmake ..
+  - cmake -G "Visual Studio 12 2013" -DwxWidgets_LIB_DIR=%WXWIN%\lib\vc_dll ..
 
 build_script:
   - cmake --build . --config Release --target package
