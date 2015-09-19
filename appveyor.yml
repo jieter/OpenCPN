@@ -17,13 +17,14 @@ install:
   - cmd: nmake -f makefile.vc
 
 before_build:
+  - set wxWidgets_ROOT_DIR=%WXWIN%
+  - set wxWidgets_LIB_DIR=%WXWIN%\lib\vc_lib
   - set
   - cmd: cd c:\project\opencpn
-  - cmd: ls %WXWIN%\lib\
-  - cmd: ls %WXWIN%\lib\vc_lib
+  - cmd: ls %wxWidgets_LIB_DIR%
   - mkdir build
   - ps: cd build
-  - cmake -DwxWidgets_ROOT_DIR=c:\wxWidgets-2.8.12 -DwxWidgets_LIB_DIR=c:\wxWidgets-2.8.12\lib\vc_lib -DwxWidgets_CONFIGURATION=mswu ..
+  - cmake -DwxWidgets_CONFIGURATION=msw ..
   #- cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=C:\wxWidgets -DCMAKE_PROGRAM_PATH=C:\cygwin\bin ..
 
 build_script:
