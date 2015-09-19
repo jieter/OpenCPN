@@ -15,11 +15,12 @@ install:
   - cmd: cd C:\wxWidgets-2.8.12\build\msw\
   - ls C:\wxWidgets-2.8.12
   - cmd: nmake -f makefile.vc BUILD=release SHARED=1
+  - cmd: nmake -f makefile.vc BUILD=debug SHARED=1
   - cmd: cinst poedit -x86
 
 before_build:
   - set wxWidgets_ROOT_DIR=%WXWIN%
-  - set wxWidgets_LIB_DIR=%WXWIN%\lib\vc_lib
+  - set wxWidgets_LIB_DIR=%WXWIN%\lib\vc_dll
   - set
   - cmd: cd c:\project\opencpn
   - cmd: ls %wxWidgets_LIB_DIR%
