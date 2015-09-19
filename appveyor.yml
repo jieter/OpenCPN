@@ -19,6 +19,7 @@ install:
   - cmd: cinst poedit -x86
 
 before_build:
+  - call "C:\Program Files\Microsoft Visual Studio 12.0\VC\vcvarsall.bat" x86
   - set wxWidgets_ROOT_DIR=%WXWIN%
   - set wxWidgets_LIB_DIR=%WXWIN%\lib\vc_dll
   - set
