@@ -23,7 +23,7 @@ before_build:
   - cmd: ls %WXWIN%\lib\vc_lib
   - mkdir build
   - ps: cd build
-  - cmake -G "Visual Studio 12" -DwxWidgets_LIB_DIR=%WXWIN%/lib/vc_lib -DwxWidgets_CONFIGURATION=mswu ..
+  - cmake -G "Visual Studio 12" -DwxWidgets_ROOT_DIR=%WXWIN% -DwxWidgets_LIB_DIR=%WXWIN%/lib/vc_lib -DwxWidgets_CONFIGURATION=mswu ..
   #- cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=C:\wxWidgets -DCMAKE_PROGRAM_PATH=C:\cygwin\bin ..
 
 build_script:
