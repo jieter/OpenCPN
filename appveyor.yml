@@ -13,9 +13,12 @@ install:
 # - ps: Start-FileDownload http://downloads.sourceforge.net/project/wxwindows/2.8.12/wxWidgets-2.8.12.zip
   - cmd: 7z x wxwidgets-3.0.2.zip -oc:\
   - cmd: SET PATH=%PATH%;%WXWIN%;%WXWIN%\lib\vc_dll;C:\Program Files\Poedit\bin;
+  - cmd: ls %WXWIN%
+  - cmd: ls %WXWIN%\build
+  - cmd: cd %WXWIN%\build\msw\
+
   - set wxWidgets_ROOT_DIR=%WXWIN%
   - set wxWidgets_LIB_DIR=%WXWIN%\lib\vc_dll
-  - cmd: cd %WXWIN%\build\msw\
   - cmd: nmake -f makefile.vc BUILD=release SHARED=1
   - cmd: nmake -f makefile.vc BUILD=debug SHARED=1
   - cmd: cinst poedit -x86
