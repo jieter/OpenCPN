@@ -11,10 +11,11 @@ install:
   - '"C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\SetEnv.cmd" /x64'
   - ps: Start-FileDownload http://downloads.sourceforge.net/project/wxwindows/2.8.12/wxWidgets-2.8.12.zip
   - cmd: 7z x wxwidgets-2.8.12.zip -oc:\
-  - cmd: SET PATH=%PATH%;C:\wxWidgets-2.8.12;%WXWIN%\lib\vc_lib
+  - cmd: SET PATH=%PATH%;C:\wxWidgets-2.8.12;%WXWIN%\lib\vc_lib;C:\Program Files\Poedit\bin;
   - cmd: cd C:\wxWidgets-2.8.12\build\msw\
   - ls C:\wxWidgets-2.8.12
-  - cmd: nmake -f makefile.vc
+  - cmd: nmake -f makefile.vc BUILD=release SHARED=1
+  - cmd: cinst poedit -x86
 
 before_build:
   - set wxWidgets_ROOT_DIR=%WXWIN%
