@@ -27,7 +27,7 @@ before_build:
   - cmd: ls %wxWidgets_LIB_DIR%
   - mkdir build
   - ps: cd build
-  - cmake -DwxWidgets_CONFIGURATION=msw ..
+  - cmake ..
   #- cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=C:\wxWidgets -DCMAKE_PROGRAM_PATH=C:\cygwin\bin ..
 
 build_script:
