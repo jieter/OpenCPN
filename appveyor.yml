@@ -18,7 +18,7 @@ install:
   # download & extract wxWidgets
   - ps: Start-FileDownload http://downloads.sourceforge.net/project/wxwindows/3.0.2/wxWidgets-3.0.2.zip
   - cmd: 7z x wxwidgets-3.0.2.zip -o%WXWIN% > null
-  - cmd: SET PATH=%PATH%;%WXWIN%;%WXWIN%\lib\vc_dll;"C:\Program Files (x86)\Poedit\Gettexttools\bin";
+  - cmd: SET PATH=%PATH%;%WXWIN%;%WXWIN%\lib\vc_dll;C:\Program Files (x86)\Poedit\Gettexttools\bin;
 
   # some debugging info
   - cmd: ls "C:\Program Files (x86)\Poedit\Gettexttools\bin\"
