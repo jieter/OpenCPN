@@ -21,6 +21,7 @@ install:
 
   # some debugging information
   - set
+  - cmake --help
 
   # build wxWidgets
   - cmd: cd %WXWIN%\build\msw\
@@ -31,7 +32,7 @@ before_build:
   - cd c:\project\opencpn
   - mkdir build
   - cd build
-  - cmake -G "Visual Studio 12 2013" -T v120_xp -DwxWidgets_LIB_DIR=%WXWIN%\lib\vc_dll ..
+  - cmake -T v120_xp ..
 
 build_script:
   - cmake --build . --config Release --target package
