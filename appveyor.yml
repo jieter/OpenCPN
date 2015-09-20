@@ -7,23 +7,21 @@ deploy: OFF
 test: OFF
 
 install:
-
   - '"C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\SetEnv.cmd" /x64'
   - cmd: SET WINDOWS_SDK_VERSION="v7.1"
 
   - choco install wxwidgets poedit -x86
   - cmd: SET PATH=%PATH%;%WXWIN%;%WXWIN%\lib\vc_dll;C:\Program Files (x86)\Poedit\Gettexttools\bin;
-
+  - ls c:\
+  - ls "c:\program files"
+  - ls "c:\program files (x86)"
+  - set WXWIN=
   - set wxWidgets_ROOT_DIR=%WXWIN%
   - set wxWidgets_LIB_DIR=%WXWIN%\lib\vc_dll
-  - set
-  # some debugging information
-  # - cmake --help
 
-  # build wxWidgets
-  # - cmd: cd %WXWIN%\build\msw\
-  # - cmd: nmake -f makefile.vc BUILD=release SHARED=1 CFLAGS=/D_USING_V120_SDK71_ CXXFLAGS=/D_USING_V120_SDK71_
-  # - cmd: nmake -f makefile.vc BUILD=debug SHARED=1 CFLAGS=/D_USING_V120_SDK71_ CXXFLAGS=/D_USING_V120_SDK71_
+  # some debugging information
+  - set
+  # - cmake --help
 
 before_build:
   - cd c:\project\opencpn
