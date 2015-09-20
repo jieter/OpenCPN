@@ -11,16 +11,11 @@ install:
   - set wxWidgets_ROOT_DIR=%WXWIN%
   - set wxWidgets_LIB_DIR=%WXWIN%\lib\vc_dll
 
-  - set
-  - ls "c:\program files\Microsoft SDKs"
-  - ls "c:\program files\Microsoft SDKs\Windows"
-  - ls "c:\program files\Microsoft SDKs\Windows\v7.1"
-  - ls "c:\program files\Microsoft SDKs\Windows\v7.1\Bin"
   - '"C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\SetEnv.cmd" /x64'
   - cmd: SET WINDOWS_SDK_VERSION="v7.1"
-  - cmd: cinst poedit -x86
 
-  # download & extract wxWidgets
+  # download & extract build dependencies
+  - cmd: cinst poedit -x86
   - choco install wxwidgets
   # - ps: Start-FileDownload http://downloads.sourceforge.net/project/wxwindows/3.0.2/wxWidgets-3.0.2.zip
   # - cmd: 7z x wxwidgets-3.0.2.zip -o%WXWIN% > null
@@ -28,11 +23,12 @@ install:
 
   # some debugging information
   - cmake --help
+  - set
 
   # build wxWidgets
-  - cmd: cd %WXWIN%\build\msw\
-  - cmd: nmake -f makefile.vc BUILD=release SHARED=1 CFLAGS=/D_USING_V120_SDK71_ CXXFLAGS=/D_USING_V120_SDK71_
-  - cmd: nmake -f makefile.vc BUILD=debug SHARED=1 CFLAGS=/D_USING_V120_SDK71_ CXXFLAGS=/D_USING_V120_SDK71_
+  # - cmd: cd %WXWIN%\build\msw\
+  # - cmd: nmake -f makefile.vc BUILD=release SHARED=1 CFLAGS=/D_USING_V120_SDK71_ CXXFLAGS=/D_USING_V120_SDK71_
+  # - cmd: nmake -f makefile.vc BUILD=debug SHARED=1 CFLAGS=/D_USING_V120_SDK71_ CXXFLAGS=/D_USING_V120_SDK71_
 
 before_build:
   - cd c:\project\opencpn
