@@ -11,7 +11,10 @@ install:
   - set wxWidgets_ROOT_DIR=%WXWIN%
   - set wxWidgets_LIB_DIR=%WXWIN%\lib\vc_dll
 
-  - '"C:\Program Files\Microsoft SDKs\Windows\v8.1A\Bin\SetEnv.cmd" /x64'
+  - ls "c:\program files (x86)\Microsoft SDKs"
+  - ls "c:\program files (x86)\Microsoft SDKs\Windows"
+  - ls "c:\program files (x86)\Microsoft SDKs\Windows\v8.1A"
+  - '"C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1A\Bin\SetEnv.cmd" /x64'
   - cmd: cinst poedit -x86
 
   # download & extract wxWidgets
@@ -22,10 +25,6 @@ install:
   # some debugging information
   - set
   - cmake --help
-  - ls "c:\program files\"
-  - ls "c:\program files (x86)\"
-  - ls "c:\program files (x86)\Microsoft SDKs"
-  - ls "c:\program files (x86)\Microsoft SDKs\Windows"
 
   # build wxWidgets
   - cmd: cd %WXWIN%\build\msw\
