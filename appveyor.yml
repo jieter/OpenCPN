@@ -22,6 +22,10 @@ install:
   # some debugging information
   - set
   - cmake --help
+  - ls "c:\program files\"
+  - ls "c:\program files (x86)\"
+  - ls "c:\program files (x86)\Microsoft SDKs"
+  - ls "c:\program files (x86)\Microsoft SDKs\Windows"
 
   # build wxWidgets
   - cmd: cd %WXWIN%\build\msw\
