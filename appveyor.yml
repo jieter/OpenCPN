@@ -18,14 +18,14 @@ install:
   # download & extract wxWidgets
   - ps: Start-FileDownload http://downloads.sourceforge.net/project/wxwindows/3.0.2/wxWidgets-3.0.2.zip
   - cmd: 7z x wxwidgets-3.0.2.zip -o%WXWIN% > null
-  - cmd: SET PATH=%PATH%;%WXWIN%;%WXWIN%\lib\vc_dll;"C:\Program Files (x86)\Poedit\bin";"C:\Program Files\Poedit\bin"
+  - cmd: SET PATH=%PATH%;%WXWIN%;%WXWIN%\lib\vc_dll;"C:\Program Files (x86)\Poedit\bin";
   # build wxWidgets
   - cmd: cd %WXWIN%\build\msw\
   - cmd: nmake -f makefile.vc BUILD=release SHARED=1
   - cmd: nmake -f makefile.vc BUILD=debug SHARED=1
   # some debugging info
-  - cmd: ls "C:\Program Files (x86)\"
-  - cmd: ls "C:\Program Files\"
+  - cmd: ls "C:\Program Files (x86)\Poedit\"
+  - cmd: ls "C:\Program Files (x86)\Poedit\bin\"
   # - cmake --help
   - set
 
