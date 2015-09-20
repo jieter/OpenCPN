@@ -34,7 +34,7 @@ before_build:
   - cd build
   - cmake -T v120_xp ..
   - ps: Start-FileDownload http://downloads.sourceforge.net/project/opencpnplugins/opencpn_packaging_data/OpenCPN_buildwin.7z
-  - cmd: 7z x OpenCPN_buildwin.7z -o c:\project\opencpn
+  - cmd: 7z x OpenCPN_buildwin.7z -oc:\project\opencpn
 
 build_script:
   - cmake --build . --config Release --target package
