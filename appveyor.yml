@@ -45,4 +45,4 @@ before_build:
 build_script:
   - cmake --build . --config debug
   # commented out because of nsis not correctly installed
-  # - cmake --build . --config Release
+  - cmake --build . --config Release
