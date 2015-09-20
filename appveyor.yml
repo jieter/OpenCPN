@@ -13,9 +13,9 @@ install:
 
   - ls "c:\program files (x86)\Microsoft SDKs"
   - ls "c:\program files (x86)\Microsoft SDKs\Windows"
-  - ls "c:\program files (x86)\Microsoft SDKs\Windows\v8.1A"
-  - ls "c:\program files (x86)\Microsoft SDKs\Windows\v8.1A\Bin"
-  - '"C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1A\Bin\SetEnv.cmd" /x64'
+  - ls "c:\program files (x86)\Microsoft SDKs\Windows\v8.1"
+  - ls "c:\program files (x86)\Microsoft SDKs\Windows\v8.1\Bin"
+  - '"C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1\Bin\SetEnv.cmd" /x64'
   - cmd: cinst poedit -x86
 
   # download & extract wxWidgets
