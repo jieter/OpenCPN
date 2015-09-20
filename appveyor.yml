@@ -21,7 +21,11 @@ install:
   - ps: Start-FileDownload http://downloads.sourceforge.net/project/wxwindows/3.0.2/wxWidgets-3.0.2.zip
   - cmd: 7z x wxwidgets-3.0.2.zip -o%WXWIN% > null
 
+  # Fix something with nsis in the register
+  - c:\project\opencpn\buildwin\NSIS_Unicode\CopyNSISUnicodeRegKey.bat
   # some debugging information
+  - ls "c:\program files"
+  - ls "c:\program files (x86)"
   - set
   # - cmake --help
 
