@@ -18,6 +18,9 @@ install:
   - set wxWidgets_LIB_DIR=%WXWIN%\lib\vc_dll
 
   # some debugging information
+  - ls %WXWIN%
+  - ls %WXWIN%\lib
+  - ls %wxWidgets_LIB_DIR%
   - set
   # - cmake --help
 
