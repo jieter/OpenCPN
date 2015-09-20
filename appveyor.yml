@@ -12,12 +12,11 @@ install:
   - set wxWidgets_LIB_DIR=%WXWIN%\lib\vc_dll
 
   - set
-  - ls "c:\program files (x86)\Microsoft SDKs"
-  - ls "c:\program files (x86)\Microsoft SDKs\Windows"
-  - ls "c:\program files (x86)\Microsoft SDKs\Windows\v7.1"
-  - type "c:\program files (x86)\Microsoft SDKs\Windows\v7.1\readme_windows_sdk_v71_update.htm"
-  - ls "c:\program files (x86)\Microsoft SDKs\Windows\v7.1\Bin"
-  - '"C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1\Bin\SetEnv.cmd" /x64'
+  - ls "c:\program files\Microsoft SDKs"
+  - ls "c:\program files\Microsoft SDKs\Windows"
+  - ls "c:\program files\Microsoft SDKs\Windows\v7.1"
+  - ls "c:\program files\Microsoft SDKs\Windows\v7.1\Bin"
+  - '"C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\SetEnv.cmd" /x64'
   - cmd: SET WINDOWS_SDK_VERSION="v7.1"
   - cmd: cinst poedit -x86
 
