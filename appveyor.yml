@@ -12,9 +12,9 @@ install:
   - set wxWidgets_LIB_DIR=%WXWIN%\lib\vc_dll
 
   - '"C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\SetEnv.cmd" /x64'
-# - cmd: cinst poedit -x86
-  - ps: Start-FileDownload https://download.poedit.net/Poedit-1.8.4-setup.exe
-  - cmd: Poedit-1.8.4-setup.exe
+  - cmd: cinst poedit -x86
+  # - ps: Start-FileDownload https://download.poedit.net/Poedit-1.8.4-setup.exe
+  # - cmd: Poedit-1.8.4-setup.exe
   # download & extract wxWidgets
   - ps: Start-FileDownload http://downloads.sourceforge.net/project/wxwindows/3.0.2/wxWidgets-3.0.2.zip
   - cmd: 7z x wxwidgets-3.0.2.zip -o%WXWIN% > null
