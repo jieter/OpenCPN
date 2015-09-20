@@ -11,11 +11,12 @@ install:
   - set wxWidgets_ROOT_DIR=%WXWIN%
   - set wxWidgets_LIB_DIR=%WXWIN%\lib\vc_dll
 
+  - set
   - ls "c:\program files (x86)\Microsoft SDKs"
   - ls "c:\program files (x86)\Microsoft SDKs\Windows"
-  - ls "c:\program files (x86)\Microsoft SDKs\Windows\v8.1"
-  - ls "c:\program files (x86)\Microsoft SDKs\Windows\v8.1\Bin"
-  - '"C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1\Bin\SetEnv.cmd" /x64'
+  - ls "c:\program files (x86)\Microsoft SDKs\Windows\v7.1"
+  - ls "c:\program files (x86)\Microsoft SDKs\Windows\v7.1\Bin"
+  - '"C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1\Bin\SetEnv.cmd" /x64'
   - cmd: cinst poedit -x86
 
   # download & extract wxWidgets
@@ -24,7 +25,6 @@ install:
   - cmd: SET PATH=%PATH%;%WXWIN%;%WXWIN%\lib\vc_dll;C:\Program Files (x86)\Poedit\Gettexttools\bin;
 
   # some debugging information
-  - set
   - cmake --help
 
   # build wxWidgets
