@@ -12,7 +12,7 @@ install:
   - set wxWidgets_LIB_DIR=%WXWIN%\lib\vc_dll
 
   - '"C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\SetEnv.cmd" /x64'
-  # - cmd: cinst poedit -x86
+# - cmd: cinst poedit -x86
   - ps: Start-FileDownload https://download.poedit.net/Poedit-1.8.4-setup.exe
   - cmd: Poedit-1.8.4-setup.exe
   # download & extract wxWidgets
@@ -23,11 +23,10 @@ install:
   - cmd: cd %WXWIN%\build\msw\
   - cmd: nmake -f makefile.vc BUILD=release SHARED=1
   - cmd: nmake -f makefile.vc BUILD=debug SHARED=1
-  # some debuggin info
-  - cmd: ls %WXWIN%
-  - cmd: ls %WXWIN%\build
-  - cmd: ls %wxWidgets_LIB_DIR%
-  - cmake --help
+  # some debugging info
+  - cmd: ls C:\Program Files (x86)\
+  - cmd: ls C:\Program Files\
+  # - cmake --help
   - set
 
 before_build:
