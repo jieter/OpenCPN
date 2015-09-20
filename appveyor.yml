@@ -21,8 +21,7 @@ install:
   - cmd: SET PATH=%PATH%;%WXWIN%;%WXWIN%\lib\vc_dll;"C:\Program Files (x86)\Poedit\Gettexttools\bin";
 
   # some debugging info
-  - cmd: ls "C:\Program Files (x86)\Poedit\"
-  - cmd: ls "C:\Program Files (x86)\Poedit\Gettexttools\"
+  - cmd: ls "C:\Program Files (x86)\Poedit\Gettexttools\bin\"
   # - cmake --help
   - set
 
