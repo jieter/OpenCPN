@@ -43,4 +43,6 @@ before_build:
   - cmd: 7z x OpenCPN_buildwin.7z -oc:\project\opencpn
 
 build_script:
-  - cmake --build . --config Debug --target package
+  - cmake --build . --config debug
+  # commented out because of nsis not correctly installed
+  # - cmake --build . --config Release
