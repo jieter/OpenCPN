@@ -13,10 +13,12 @@ install:
 
   - '"C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\SetEnv.cmd" /x64'
   - cmd: cinst poedit -x86
+  # - ps: Start-FileDownload https://download.poedit.net/Poedit-1.8.4-setup.exe
+  # - cmd: Poedit-1.8.4-setup.exe
   # download & extract wxWidgets
   - ps: Start-FileDownload http://downloads.sourceforge.net/project/wxwindows/3.0.2/wxWidgets-3.0.2.zip
   - cmd: 7z x wxwidgets-3.0.2.zip -o%WXWIN% > null
-  - cmd: SET PATH=%PATH%;%WXWIN%;%WXWIN%\lib\vc_dll;C:\Program Files (x86)\Poedit\bin;
+  - cmd: SET PATH=%PATH%;%WXWIN%;%WXWIN%\lib\vc_dll;C:\Program Files (x86)\Poedit\bin;C:\Program Files\Poedit\bin
   # build wxWidgets
   - cmd: cd %WXWIN%\build\msw\
   - cmd: nmake -f makefile.vc BUILD=release SHARED=1
